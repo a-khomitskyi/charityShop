@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<div>{{ item.title }}</div>
+	<div>{{ item.description }}</div>
+	{% if item.image %}<img src="{{ item.image }}">{% endif %}
+	<div>{% if item.price %}{{ item.price }}{% else %}Free{% endif %}</div>
+	<div>{{ item.category.title }}</div>
+	<div>{{ item.size }}</div>
+	<div>{{ item.sex }}</div>
+
+{% endblock %}
