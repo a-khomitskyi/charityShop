@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
+from app.models import Category
 from app.models import Item
 
 
@@ -15,4 +16,4 @@ class ItemDetail(DetailView):
 class CategoryView(HomeView):
 
 	def get_queryset(self):
-		return Item.objects.filter(slug=self.kwargs['slug'])
+		return Item.objects.filter(category__slug=self.kwargs['slug'])
